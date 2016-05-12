@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Личный сайт студента GeekBrains</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	function checkAnswers(){
+		var goodAnswer = 0;
+
+		var answer1 = document.getElementById('puzzle1').value;
+		if(answer1.toLowerCase() == 'очки'){
+			goodAnswer++;
+			document.getElementById('output1').innerHTML = 'Верно'
+		}else document.getElementById('output1').innerHTML = 'Неверно'
+
+		var answer2 = document.getElementById('puzzle2').value;
+		if(answer2.toLowerCase() == 'капуста'){
+			goodAnswer++;
+			document.getElementById('output2').innerHTML = ' Верно'
+		}else document.getElementById('output2').innerHTML = ' Неверно'
+
+
+		if(goodAnswer == 0)
+			document.getElementById('output').innerHTML = 'Вы ничего не угадали'
+		else
+			document.getElementById('output').innerHTML ='Количество правильных ответов: ' + goodAnswer;
+
+	}
+
+
+</script>
+
+
+</head>
+<body>
+
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="site_title">
+		<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
+	</div>
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess.html">Угадайка</a></li>
+			<li><a href="guess2.html">Угадайка Мультиплеер</a></li>
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Игра в загадки</h2>
+	</div>
+	<div id="content">
+		
+		<h3>Отгадай загадки!</h3>  
+
+		<p>Сидит Пахом на коне верхом: сам не грамотный, а читать помогает<p/>
+		<input type="text" id="puzzle1" /><span id="output1"></span>
+		
+		<br/><br/><br/>
+		
+		<p>Что за скрип? Что за хруст? <br/> Это что еще за куст? <br/> Как же быть без хруста, <br/> Если я...<p/>
+		<input type="text" id="puzzle2" /><span id="output2"></span>
+
+		<br/><br/><br/>
+
+		<input type="button" value="Ответить" onClick="checkAnswers()"/>
+		<div id="output"></div>
+	</div>
+           
+    <div id="tooplate_footer">    
+        Copyright © 2016 <a href="http://geekbrains.ru">GeekBrains</a>
+    </div>
+    
+</div> <!-- end of warpper -->
+
+</body>
+</html>
